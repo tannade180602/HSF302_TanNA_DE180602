@@ -1,0 +1,12 @@
+com\de180602\mvc\controller\ShoesController.class
+com\de180602\mvc\service\ShoesService.class
+com\de180602\mvc\service\impl\ShoesServiceImpl.class
+com\de180602\mvc\MvcApplication.class
+com\de180602\mvc\repository\ShoesRepository.class
+com\de180602\mvc\ServletInitializer.class
+com\de180602\mvc\service\ShoesTypeService.class
+com\de180602\mvc\service\impl\ShoesTypeServiceImpl.class
+com\de180602\mvc\dto\ShoesDTO.class
+com\de180602\mvc\entity\Shoes.class
+com\de180602\mvc\repository\ShoesTypeRepository.class
+com\de180602\mvc\entity\ShoesType.class

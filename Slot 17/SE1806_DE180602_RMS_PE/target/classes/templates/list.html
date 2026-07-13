@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Shoes Management</title>
+</head>
+<body>
+    <h1>Shoes Management</h1>
+    <h2>Shoes List</h2>
+    
+    <div th:if="${message}" style="color: green;">
+        <p th:text="${message}"></p>
+    </div>
+
+    <form th:action="@{/}" method="get">
+        Shoes Name: <input type="text" name="shoesName" th:value="${shoesName}" />
+        <button type="submit">Search</button>
+    </form>
+    <br/>
+    <a th:href="@{/add}">Add New</a>
+    <br/><br/>
+    <table border="1">
+        <thead>
+            <tr>
+                <th># No</th>
+                <th>Shoes No</th>
+                <th>Shoes Name</th>
+                <th>Type</th>
+                <th>Price ($)</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="shoes, stat : ${shoesList}">
+                <td th:text="${stat.count}"></td>
+                <td th:text="${shoes.shoesNo}"></td>
+                <td th:text="${shoes.shoesName}"></td>
+                <td th:text="${shoes.typeName}"></td>
+                <td th:text="${shoes.price}"></td>
+                <td>
+                    <a th:href="@{'/delete/' + ${shoes.shoesId}}" onclick="return confirm('Are you sure you want to delete \'' + this.getAttribute('data-name') + '\'?')" th:attr="data-name=${shoes.shoesName}">Delete</a> | 
+                    <a th:href="@{'/view/' + ${shoes.shoesId}}">View</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
